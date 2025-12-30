@@ -33,3 +33,32 @@ value = 5
 a1.remove(value)
 print(sorted(a1))
 
+#14 Longest Common Subsequance
+
+strs = ["flow","flower","flight"]
+
+def func(strs):
+    prifix = strs[0]
+
+    for word in strs[1:]:
+        while not word.startswith(prifix):
+            prifix = prifix[:-1]
+            if prifix == "":
+                return ""
+    return prifix
+
+print(func(strs))
+
+# 27 remove elements
+
+nums = [2,3,4,5,6,6,1]
+
+target = 6
+
+while target in nums:
+    for i in nums:
+        if i == target:
+            nums.remove(i)
+
+print(nums)
+
